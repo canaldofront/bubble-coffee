@@ -1,0 +1,12 @@
+@import '@/styles/variables.scss';
+
+.stars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+
+  span {
+    margin-left: 0.5rem;
+    color: $darkSecondary;
+  }
+}

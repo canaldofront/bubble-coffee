@@ -1,0 +1,22 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.about {
+  @include max-width;
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+  scroll-margin-top: 10rem;
+
+  @include device(notebook) {
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 60rem;
+  }
+
+  img {
+    box-shadow: 0.3rem 0.6rem 1rem rgba($black, 0.25);
+    max-width: 100%;
+    height: auto;
+  }
+}

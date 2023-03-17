@@ -1,0 +1,29 @@
+@import '@/styles/variables.scss';
+
+.product {
+  font-size: 1.4rem;
+  width: 24rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+  & > img {
+    filter: drop-shadow(0.4rem 0.4rem 0.5rem rgba($black, 0.25));
+    -webkit-filter: drop-shadow(0.4rem 0.4rem 0.5rem rgba($black, 0.25));
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-size: inherit;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    color: $darkSecondary;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+  }
+}

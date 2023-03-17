@@ -1,0 +1,77 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.reviews {
+  @include max-width;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .image {
+    filter: drop-shadow(0.3rem 0.6rem 1rem rgba($black, 0.25));
+    -webkit-filter: drop-shadow(0.3rem 0.6rem 1rem rgba($black, 0.25));
+    margin-bottom: 6rem;
+    max-width: 100%;
+    height: auto;
+  }
+
+  h2 {
+    margin-bottom: 6rem;
+    text-align: center;
+  }
+
+  .review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 60rem;
+    position: relative;
+
+    .avatar {
+      margin-bottom: 1rem;
+      border-radius: 50%;
+    }
+
+    h3 {
+      text-transform: uppercase;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h4 {
+      font-size: 1.4rem;
+      color: $darkSecondary;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .previous,
+    .next {
+      position: absolute;
+      background-color: $darkSecondary;
+      border: none;
+      outline: none;
+      padding: 1rem;
+      border-radius: 50%;
+      color: $lightSecondary;
+      font-weight: 700;
+      font-size: 1.8rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    .previous {
+      left: 0;
+    }
+
+    .next {
+      right: 0;
+    }
+  }
+}

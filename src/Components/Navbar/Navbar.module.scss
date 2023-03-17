@@ -1,0 +1,117 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.navbar {
+  .desktop {
+    @include max-width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    padding: 2rem;
+
+    @include device(tablet) {
+      display: none;
+    }
+
+    .logo {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -45%);
+    }
+
+    .navigation {
+      ul {
+        li {
+          display: inline-block;
+
+          &:not(:last-of-type) {
+            margin-right: 2rem;
+          }
+
+          a {
+            padding: 1rem;
+            color: $mediumSecondary;
+
+            &:hover {
+              color: lighten($mediumSecondary, 15);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .mobile {
+    display: none;
+
+    @include device(tablet) {
+      display: block;
+    }
+
+    .burguer,
+    .close {
+      width: 2.4rem;
+      height: 2.4rem;
+      color: $mediumSecondary;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .burguer {
+      top: 3rem;
+      right: 2rem;
+    }
+
+    .logo {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 10;
+    }
+
+    .mobile-navigation {
+      position: fixed;
+      right: -30rem;
+      top: 0;
+      background-color: $primary;
+      height: 100vh;
+      width: 30rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 30;
+      transition: all 0.25s ease-in;
+
+      .close {
+        top: 4rem;
+        left: 4rem;
+      }
+
+      ul {
+        li {
+          text-align: center;
+
+          &:not(:last-of-type) {
+            margin-bottom: 4rem;
+          }
+
+          a {
+            padding: 1rem;
+            color: $mediumSecondary;
+            font-size: 2.1rem;
+          }
+        }
+      }
+    }
+
+    &.active .mobile-navigation {
+      right: 0;
+    }
+  }
+}

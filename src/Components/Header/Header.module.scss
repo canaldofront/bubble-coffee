@@ -1,0 +1,75 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.header {
+  background: radial-gradient($lightPrimary, $primary);
+  min-height: 60rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 6rem;
+  overflow-x: clip;
+
+  .content {
+    text-align: center;
+    max-width: 46rem;
+    padding: 0 1rem;
+
+    .line {
+      border-top: 1px solid $secondary;
+      margin: 0.5rem auto 1.5rem auto;
+      width: 50%;
+    }
+
+    p {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .leaf1 {
+    position: absolute;
+    bottom: 8rem;
+    right: 0;
+
+    @include device(notebook) {
+      right: -10rem;
+      bottom: 6rem;
+    }
+  }
+
+  .leaf2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    @include device(notebook) {
+      left: -10rem;
+    }
+  }
+
+  .coffee {
+    position: absolute;
+    bottom: -11rem;
+    right: 0;
+  }
+
+  .flower {
+    position: absolute;
+    bottom: -10rem;
+    left: 10rem;
+
+    @include device(notebook) {
+      left: 4rem;
+    }
+  }
+
+  .leaf1,
+  .leaf2,
+  .coffee,
+  .flower {
+    @include device(tablet) {
+      display: none;
+    }
+  }
+}

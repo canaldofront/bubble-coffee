@@ -1,0 +1,107 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+
+  @include device(notebook) {
+    font-size: 60%;
+  }
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: $background;
+  font-family: $textFont;
+}
+
+h1,
+.h1 {
+  text-transform: uppercase;
+  color: $secondary;
+  font-family: $headerFont;
+  font-size: 4.8rem;
+  font-weight: 400;
+
+  @include device(notebook) {
+    font-size: 4.6rem;
+  }
+
+  @include device(mobile) {
+    font-size: 4.2rem;
+  }
+}
+
+:is(h2, h3, h4, h5, h6) {
+  font-weight: 400;
+}
+
+.title {
+  font-family: $headerFont;
+  text-transform: capitalize;
+  font-size: 4rem;
+  font-weight: 500;
+
+  @include device(mobile) {
+    font-size: 3.6rem;
+  }
+
+  &.dark-bg {
+    color: $secondary;
+  }
+
+  &.light-bg {
+    color: $darkSecondary;
+  }
+}
+
+p,
+.p {
+  line-height: 2.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+
+  &:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  &.dark-bg {
+    color: $secondary;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  padding: 1.2rem 6rem;
+  font-family: $textFont;
+  clip-path: polygon(15% 0%, 85% 0%, 100% 50%, 85% 100%, 15% 100%, 0% 50%);
+
+  &.btn-primary {
+    background-color: $secondary;
+    color: $primary;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &:hover {
+      cursor: pointer;
+      background-color: lighten($secondary, 3);
+    }
+  }
+}

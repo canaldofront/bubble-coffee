@@ -1,0 +1,55 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.social {
+  @include max-width;
+  background-color: $primary;
+  padding: 6rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  max-height: 48rem;
+  scroll-margin-top: 10rem;
+
+  @include device(notebook) {
+    padding: 6rem 3rem;
+  }
+
+  @include device(tablet) {
+    justify-content: center;
+  }
+
+  .content {
+    max-width: 50rem;
+    display: flex;
+    flex-direction: column;
+
+    @include device(tablet) {
+      align-items: center;
+      text-align: center;
+    }
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-top: 2rem;
+      margin-bottom: 8rem;
+
+      @include device(mobile) {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+
+  .image {
+    filter: drop-shadow(0.3rem 0.6rem 1rem rgba($black, 0.25));
+    -webkit-filter: drop-shadow(0.3rem 0.6rem 1rem rgba($black, 0.25));
+    margin-top: -10rem;
+
+    @include device(tablet) {
+      display: none;
+    }
+  }
+}

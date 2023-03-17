@@ -1,0 +1,104 @@
+@import '@/styles/variables.scss';
+@import '@/styles/mixins.scss';
+
+.details {
+  @include max-width;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 16rem;
+
+  @include device(mobile) {
+    justify-content: center;
+    margin-bottom: 8rem;
+  }
+
+  .roast {
+    max-width: 15rem;
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .types {
+      display: flex;
+      gap: 1rem;
+
+      span {
+        width: 3.2rem;
+        height: 3.2rem;
+        border-radius: 50%;
+      }
+
+      .light {
+        background-color: $secondary;
+      }
+
+      .medium {
+        background-color: $mediumSecondary;
+      }
+
+      .dark {
+        background-color: $lightDarkSecondary;
+      }
+    }
+
+    @include device(mobile) {
+      display: none;
+    }
+  }
+
+  img {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include device(tablet) {
+      display: none;
+    }
+  }
+
+  .card-wrapper {
+    background-color: $lightSecondary;
+    padding: 2rem;
+    z-index: 5;
+    margin-top: -12rem;
+    box-shadow: 0.4rem 0.4rem 1rem rgba($black, 0.25);
+
+    .card {
+      border: 1px solid $darkSecondary;
+      padding: 2rem;
+      color: $darkSecondary;
+      max-width: 25rem;
+
+      .info:not(:last-of-type) {
+        margin-bottom: 2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        text-align: center;
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+      }
+
+      h3 {
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+
+      h4 {
+        font-size: 1.4rem;
+
+        span {
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+}
